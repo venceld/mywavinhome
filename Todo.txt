@@ -1,0 +1,5 @@
+1. Loginpage
+
+2. List of thermostats
+
+3. Routing from loginpage to list of thermostats
