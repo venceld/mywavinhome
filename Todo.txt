@@ -1,6 +1,10 @@
 1. Loginpage
 To this watch the video in section 13 - Clima - Powering Your Flutter App with live weather web data
 
+Create login, forgot password button
+
+The app stores login information in mobile device, this functionality won't be necessary after successful login to the app.
+
 2. List of thermostats
 
 3. Routing from loginpage to list of thermostats
