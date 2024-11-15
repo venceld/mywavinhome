@@ -7,11 +7,30 @@ void main() {
         backgroundColor: const Color.fromRGBO(22, 90, 158, 100),
         title: const Text('Mywavinhome'),
       ),
-      body: const Center(
-        child: Image(
-          image: AssetImage('images/mywavinhome.png'),
+      body: Container(
+        child: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.all(20.0),
+                child: TextField(
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     ),
   ));
 }
+
+/*const Center(
+child: Image(
+image: AssetImage('images/mywavinhome.png'),
+),
+),*/
