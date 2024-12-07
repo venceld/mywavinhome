@@ -7,7 +7,61 @@ void main() {
         backgroundColor: const Color.fromRGBO(22, 90, 158, 100),
         title: const Text('Mywavinhome'),
       ),
-      body: Container(
+      body: const MyLoginForm(),
+    ),
+  ));
+}
+
+class MyLoginForm extends StatefulWidget {
+  const MyLoginForm({super.key});
+
+  @override
+  MyLoginFormState createState() {
+    return MyLoginFormState();
+  }
+}
+
+class MyLoginFormState extends State<MyLoginForm> {
+  final _formkey = GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Form(
+      key: _formkey,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget> [
+          TextFormField(
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter some text';
+              }
+              return null;
+            },
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical:16),
+            child: ElevatedButton(
+              onPressed: () {
+                if (_formkey.currentState!.validate()) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Processing Data')),
+                  );
+                }
+              },
+              child: const Text('Login'),
+            ),
+          ),
+        ],
+      )
+    );
+
+  }
+}
+
+/*
+Container(
         child: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -25,9 +79,8 @@ void main() {
           ),
         ),
       ),
-    ),
-  ));
-}
+*/
+
 
 /*const Center(
 child: Image(
