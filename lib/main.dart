@@ -26,37 +26,48 @@ class MyLoginFormState extends State<MyLoginForm> {
 
   @override
   Widget build(BuildContext context) {
-
     return Form(
-      key: _formkey,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget> [
-          TextFormField(
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical:16),
-            child: ElevatedButton(
-              onPressed: () {
-                if (_formkey.currentState!.validate()) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Processing Data')),
-                  );
+        key: _formkey,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            TextFormField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter user name';
                 }
+                return null;
               },
-              child: const Text('Login'),
+              decoration: const InputDecoration(
+                labelText: 'Username',
+              ),
             ),
-          ),
-        ],
-      )
-    );
-
+            TextFormField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter password';
+                }
+                return null;
+              },
+              decoration: const InputDecoration(
+                labelText: 'Password',
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              child: ElevatedButton(
+                onPressed: () {
+                  if (_formkey.currentState!.validate()) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Processing Data')),
+                    );
+                  }
+                },
+                child: const Text('Login'),
+              ),
+            ),
+          ],
+        ));
   }
 }
 
@@ -80,7 +91,6 @@ Container(
         ),
       ),
 */
-
 
 /*const Center(
 child: Image(
